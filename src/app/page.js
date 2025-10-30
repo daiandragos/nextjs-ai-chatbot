@@ -27,9 +27,10 @@ export default function Chat() {
     db.chats.orderBy("createdAt").reverse().toArray()
   );
 
-  const currentChat = useLiveQuery(() => {
-    db.chats.get(Number(currentChatId), [currentChatId]);
-  });
+  const currentChat = useLiveQuery(
+    () => db.chats.get(Number(currentChatId)),
+    [currentChatId]
+  );
 
   const {
     messages,
@@ -145,7 +146,7 @@ export default function Chat() {
               value={input}
               placeholder="Message AI Assistant..."
               onChange={handleInputChange}
-              disabled={status !== "ready" && status !== "undefined"}
+              disabled={status !== "ready" && status !== undefined}
               className="input-field"
               aria-label="Chat input"
             />
