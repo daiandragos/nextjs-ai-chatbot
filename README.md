@@ -2,7 +2,7 @@
 
 A custom AI app developed in NextJS, designed to represent a versatile, user-friendly chatbot that can be used as a standalone project, or integrated in future projects.
 
-## **Includes following main libraries: **
+## **Includes the following main libraries:**
 
 | Package     | Description.                |
 | ----------- | --------------------------- |
