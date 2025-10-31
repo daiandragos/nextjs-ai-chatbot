@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { useLiveQuery } from "dexie-react-hooks";
 import { SendHorizontal, MinusCircle } from "lucide-react";
 import ChatThread from "../components/ChatThread";
+import Sidebar from "../components/Sidebar";
 import "../styles/page.css";
 
 export default function Chat() {
@@ -122,6 +123,12 @@ export default function Chat() {
 
   return (
     <div className="chat-container">
+      <Sidebar
+        fetchedChats={fetchedChats}
+        currentChatId={currentChatId}
+        setCurrentChatId={setCurrentChatId}
+        initializeNewChat={initializeNewChat}
+      />
       <div className="chat-main">
         <div className="chat-header">
           <div className="title-group">
